@@ -1,0 +1,14 @@
+<div class="ui raised padded segment container form">
+  <h2>
+    {{model.title}}
+  </h2>
+  {{#if model.updated}}
+    <span class="meta">Last updated {{time-ago model.updated}} on {{moment-format model.updated 'M/D/YY h:mma'}}</span>
+  {{/if}}
+  <div class="ui divider"></div>
+
+  <p>{{markdown-to-html model.text}}</p>
+
+  <div class="ui divider"></div>
+  <button type="button" class="ui tiny negative button" {{action "deleteForever"}}>Delete Forever</button>
+</div>

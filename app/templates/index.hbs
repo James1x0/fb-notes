@@ -1,9 +1,37 @@
-<ul>
-  {{#each model as |note|}}
-    <li>
-      {{note.title}}
-    </li>
-  {{/each}}
-</ul>
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui raised padded segment container">
+      <ul>
+        {{#each model as |note|}}
+          <li>
+            <div>
+              {{#if note.isNew}}
+                {{#if note.title}}
+                  {{note.title}}
+                {{else}}
+                  Untitled Note
+                {{/if}}
+              {{else}}
+                {{#link-to 'index.view' note.id}}
+                  {{note.title}}
+                {{/link-to}}
+                <span class="actions meta">
+                  {{#link-to 'index.view.edit' note.id}}Edit{{/link-to}}
+                </span>
+              {{/if}}
+            </div>
+            <div class="meta ultralight">Started {{time-ago note.created}}</div>
+          </li>
+        {{else}}
+          <h3>No notes, yet.</h3>
+        {{/each}}
+      </ul>
 
-{{outlet}}
+      {{#link-to 'index.compose'}}Compose new note{{/link-to}}
+    </div>
+  </div>
+
+  <div class="twelve wide column">
+    {{outlet}}
+  </div>
+</div>

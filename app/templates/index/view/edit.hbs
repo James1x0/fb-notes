@@ -8,10 +8,5 @@
     {{textarea value=model.text placeholder="Note"}}
   </div>
 
-  <button type="button" class="ui large button" {{action "saveNote"}}>Save Note</button>
-  {{#if didAutosave}}
-    <span class="meta">
-      Auto-saved note {{time-ago didAutosave}}
-    </span>
-  {{/if}}
+  <button type="button" class="ui large button" {{action "saveNote"}}>Save Edits</button>
 </div>

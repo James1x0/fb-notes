@@ -13,7 +13,13 @@ body, html, h1, h2, h3, h4, h5, h6 {
 }
 
 .application__content {
-  min-height: 80vh;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2em 1em;
+  background-image: url('https://source.unsplash.com/random/1440');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .application__footer {
@@ -28,11 +34,24 @@ body, html, h1, h2, h3, h4, h5, h6 {
 
 a,
 a:visited {
-  color: #2CE5FF;
+  color: #4E96C2;
   text-decoration: none;
   transition: 'color' .3s ease-in-out;
 }
 
 a:hover {
-  color: #45B3D6;
+  color: #888;
+}
+
+button {
+  border: none;
+  background: #fff;
+}
+
+.meta {
+  font-size: .7em;
+}
+
+.ultralight {
+  color: #CCC;
 }

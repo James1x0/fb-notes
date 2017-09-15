@@ -7,11 +7,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('sign-in');
+  this.route('sign-in', { path: '/' });
 
   this.route('index', { path: '/notes' }, function() {
     this.route('index', { path: '/' });
     this.route('compose');
+    this.route('view', { path: '/:note_id' }, function() {
+      this.route('edit');
+    });
   });
 });
 
