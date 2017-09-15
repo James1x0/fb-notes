@@ -25,6 +25,9 @@ export default Route.extend({
       .then(data => {
         console.log(data);
         this.transitionTo('index');
+      })
+      .catch(err => {
+        debug(err);
       });
     },
 
