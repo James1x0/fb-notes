@@ -1,0 +1,11 @@
+<div class="application__content">
+  {{outlet}}
+</div>
+<footer class="application__footer">
+  <div class="authenticated__footer">
+    {{#if session.isAuthenticated}}
+      {{session.currentUser.displayName}}
+      <a href="#" {{action "signOut"}}>X</a>
+    {{/if}}
+  </div>
+</footer>
